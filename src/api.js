@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://api.themoviedb.org/3/';
+// const KEY = '2e84a3ac834b739d0dd29a1e9937557'
 const KEY = '2e84a3ac834b739d0dd29a1e99375572'
 
 export const getTrendingFilms = async () => {

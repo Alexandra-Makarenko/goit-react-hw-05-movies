@@ -15,7 +15,7 @@ const Cast = () => {
     const film = await getFilmCast(movieId);
     setFilm(film);
   } catch {
-    setError('Failed to load film :(');
+    setError('Failed to load cast :(');
   } finally {
     setIsLoading(false);   
   }
@@ -24,17 +24,16 @@ const Cast = () => {
 useEffect(() => {
     fetchFilms();
  }, [fetchFilms]);
-    // const cast = fetchFilms();
     
   return (
       <main>
           <h1>Cast</h1>
-     <div>
+    {!isLoading ?  (!error ?  <div>
       {film.map((cast) => (
-                    <div key={cast.id}
-               > <li>{cast.name}</li></div>
+            <div key={cast.id}
+        > <li>{cast.name}</li></div>         
                 ))}
-    </div>
+    </div>:<div>{error}</div>) :<div>Is loading</div>}
     </main>
   );
 };

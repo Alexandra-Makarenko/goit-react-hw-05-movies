@@ -26,11 +26,9 @@ useEffect(() => {
   
   return (
     <main>
-      {!isLoading ? <div>
-        <h1>Tranding today</h1>
-        {!error ? <FilmList films={films} /> : <div>{error}</div>}
-      </div>
-        : <div>Loading films...</div>}
+      <h1>Tranding today</h1>
+       {!isLoading ?(!error ? <FilmList films={films} />:<div>{error}</div>)
+        : <div>Is loading</div>}
     </main>
   );
 }

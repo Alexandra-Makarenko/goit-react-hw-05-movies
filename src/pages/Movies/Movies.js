@@ -24,7 +24,7 @@ const Movies = () => {
     const films = await getFilms(filmName);
     setFilms(films);
   } catch {
-    setError('Failed to load film :(');
+    setError('Failed to load films :(');
   } finally {
     setIsLoading(false);   
   }
@@ -40,7 +40,7 @@ const Movies = () => {
   return (
    <main>
       <SearchBox value={filmName} onChange={updateQueryString} />
-      {!isLoading ?<FilmList films={films} />
+      {!isLoading ?(!error ? <FilmList films={films} />:<div>{error}</div>)
         : <div>Is loading</div>}
       </main>
   );

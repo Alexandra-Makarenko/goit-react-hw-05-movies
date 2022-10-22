@@ -42,7 +42,7 @@ useEffect(() => {
           <h2>{film.title || film.name}</h2>  
           <FilmBox>                
           <img src={`https://image.tmdb.org/t/p/w500/${film.poster_path}`} alt={film.title} />
-            <Container>
+            {!error ?<Container>
               <h2>Overview</h2>
               <p>{film.overview}</p>           
               <h2>User score</h2>
@@ -53,7 +53,7 @@ useEffect(() => {
                 > {<li>{genre}</li>}
                 </div>
                 ))}           
-            </Container>
+            </Container> : <div>{error}</div>}
           </FilmBox>
          <ul>
         <li>
