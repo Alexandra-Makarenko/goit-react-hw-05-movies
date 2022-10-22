@@ -38,10 +38,11 @@ const Movies = () => {
 
 
   return (
-    <main>
+   <main>
       <SearchBox value={filmName} onChange={updateQueryString} />
-      <FilmList films={films} />
-    </main>
+      {!isLoading ?<FilmList films={films} />
+        : <div>Is loading</div>}
+      </main>
   );
 };
 

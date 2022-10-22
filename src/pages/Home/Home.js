@@ -14,7 +14,7 @@ const Home = () => {
     const films = await getTrendingFilms();
     setFilms(films);
   } catch {
-    setError('Failed to load film :(');
+    setError('Failed to load films :(');
   } finally {
     setIsLoading(false);   
   }
@@ -28,7 +28,7 @@ useEffect(() => {
     <main>
       {!isLoading ? <div>
         <h1>Tranding today</h1>
-        <FilmList films={films} />
+        {!error ? <FilmList films={films} /> : <div>{error}</div>}
       </div>
         : <div>Loading films...</div>}
     </main>

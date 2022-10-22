@@ -1,4 +1,4 @@
-import { useParams,useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getFilmCast } from "api";
 import { useState, useEffect, useCallback } from 'react';
 
@@ -8,8 +8,7 @@ const Cast = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-    const location = useLocation();
-
+ 
    const fetchFilms = useCallback(async () => {
   try {
     setIsLoading(true);
